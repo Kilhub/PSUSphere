@@ -40,6 +40,7 @@ class Command(BaseCommand):
             'Initial data for students created successfully.'))
 
     def create_membership(self, count):
+        fake = Faker()
         for _ in range(count):
             OrgMember.objects.create(
                 student=Student.objects.order_by('?').first(),
